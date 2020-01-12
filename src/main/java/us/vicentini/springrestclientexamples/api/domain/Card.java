@@ -1,14 +1,14 @@
 package us.vicentini.springrestclientexamples.api.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-
-import java.time.LocalDate;
 
 @Data
 public class Card {
     private String type;
     private String number;
-    private LocalDate expirationDate;
+    @JsonProperty("expiration_date")
+    private ExpirationDate expirationDate;
     private String iban;
     private String swift;
 }
