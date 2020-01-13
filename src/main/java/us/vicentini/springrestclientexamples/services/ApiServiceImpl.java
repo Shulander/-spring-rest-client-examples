@@ -1,6 +1,7 @@
 package us.vicentini.springrestclientexamples.services;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import us.vicentini.springrestclientexamples.api.domain.User;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@ConditionalOnBean(RestTemplate.class)
 class ApiServiceImpl implements ApiService {
 
     private final RestTemplate restTemplate;
