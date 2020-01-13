@@ -25,13 +25,13 @@ public class UserControllerTest {
 
 
     @BeforeEach
-    public void setUp() throws Exception {
+    public void setUp() {
         webTestClient = WebTestClient.bindToApplicationContext(applicationContext).build();
     }
 
 
     @Test
-    public void index() throws Exception {
+    public void index() {
 
         webTestClient.get().uri("/")
                 .exchange()
@@ -40,7 +40,7 @@ public class UserControllerTest {
 
 
     @Test
-    public void formPost() throws Exception {
+    public void formPost() {
 
         MultiValueMap<String, String> formData = new LinkedMultiValueMap<>();
         formData.add("limit", "3");
